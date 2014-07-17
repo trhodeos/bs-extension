@@ -1,0 +1,11 @@
+[
+  { 
+    "toggle": "(function(){return window.Grooveshark.togglePlayPause()})()",
+    "pause": "(function(){return window.Grooveshark.pause()})()",
+    "next": "(function(){return window.Grooveshark.next()})()",
+    "previous": "(function(){return window.Grooveshark.previous()})()",
+    "favorite": "(function(){return window.Grooveshark.favoriteCurrentSong()})()",
+    "i18nKey": "grooveshark",
+    "urlToMatch": "grooveshark.com"
+  }
+]

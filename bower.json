@@ -1,0 +1,20 @@
+{
+  "name": "bs-extension",
+  "version": "0.0.0",
+  "authors": [
+    "Tyler Rhodes <tyler.s.rhodes@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.14",
+    "underscore": "~1.6.0"
+  }
+}

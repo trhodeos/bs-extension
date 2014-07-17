@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "BeardedSpice",
+  "description": "Control web-based media apps with your media keys.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "resources/beard.png",
+    "default_popup": "index.html"
+  },
+  
+  "commands": {
+    "toggle": {
+      "suggested_key": {
+        "default": "MediaPlayPause"
+      },
+      "description": "Toggle feature foo",
+      "global": true
+    },
+    "pause": {
+
+    },
+    "previous": {
+
+    },
+    "next": {
+
+    },
+    "favorite": {
+
+    }
+  },
+
+  "permissions": [
+    "tabs"
+  ]
+}
