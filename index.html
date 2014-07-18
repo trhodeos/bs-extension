@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="main"></div>
 
-<div id="main"></div>
-
-<script data-main="javascript/main" type="text/javascript" src="bower_components/requirejs/require.js"></script>
+    <script type="type/template" id="tab_list_element_template">
+      <div class="tab_list_element">
+        <h3><%= title %></h3>
+        <p><%= url %></p>
+      </div>
+    </script>
+    <script data-main="javascript/main.js" src="bower_components/requirejs/require.js"></script>
+  </body>
+</html>
