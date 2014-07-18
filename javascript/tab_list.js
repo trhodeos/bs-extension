@@ -34,7 +34,7 @@ define(['underscore', 'services', 'dom_utils'],
         DomUtils.append(that.el_, that.template_({
           title: tab.title,
           url: tab.url
-        });
+        }));
       });
     });
   };
