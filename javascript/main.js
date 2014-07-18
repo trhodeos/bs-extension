@@ -10,7 +10,6 @@ require(['underscore', 'tab_list'], function(_, TabList) {
   tabList.render();
 
   chrome.commands.onCommand.addListener(function(command) {
-    alert(command);
-    bkg.console.log('Command:', command);
+    console.log('Command:', command);
   });
 });
