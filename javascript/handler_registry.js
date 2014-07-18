@@ -3,13 +3,13 @@ define(['underscore', 'handler'], function(_, Handler) {
   var HandlerRegistry = function(url) {
     _.bindAll(this, 'refresh_', 'add_', 'getFor');
     this.url_ = url;
-    this.handlers_ = [];
     this.refresh_();
   };
 
   HandlerRegistry.prototype.refresh_ = function() {
     var xhr = new XMLHttpRequest();
     var that = this;
+    that.handlers_ = [];
     var handleHandlersJson = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var response = JSON.parse(xhr.responseText);
