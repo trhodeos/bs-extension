@@ -1,4 +1,5 @@
-define(['underscore', 'services', 'dom_utils'], function(_, Services, DomUtils) {
+define(['underscore', 'services', 'dom_utils'], 
+    function(_, Services, DomUtils) {
   var TabList = function(el, opt_template_id) {
     this.el_ = el;
     var tmplId = opt_template_id || 'tab_list_element_template';
@@ -30,7 +31,7 @@ define(['underscore', 'services', 'dom_utils'], function(_, Services, DomUtils) 
     that.refresh_(function(tabs) {
       DomUtils.clear(that.el_);
       _.each(tabs, function(tab) {
-        that.el_.innerHTML += that.template_({
+        DomUtils.append(that.el_, that.template_({
           title: tab.title,
           url: tab.url
         });
