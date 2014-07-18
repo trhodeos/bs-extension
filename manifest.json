@@ -12,35 +12,28 @@
   "commands": {
     "toggle": {
       "suggested_key": {
-        "default": "MediaPlayPause"
+        "default": "Ctrl+Shift+9"
       },
       "description": "Toggle play/pause",
       "global": true
     },
-    "pause": {
-      "suggested_key": {
-        "default": "MediaPlayPause"
-      },
-      "description": "Pause currently playing media",
-      "global": true
-    },
     "previous": {
       "suggested_key": {
-        "default": "MediaPlayPause"
+        "default": "Ctrl+Shift+8"
       },
       "description": "Go to previous song",
       "global": true
     },
     "next": {
       "suggested_key": {
-        "default": "MediaPlayPause"
+        "default": "Ctrl+Shift+0"
       },
       "description": "Go to next song",
       "global": true
     },
     "favorite": {
       "suggested_key": {
-        "default": "MediaPlayPause"
+        "default": "Ctrl+Shift+7"
       },
       "description": "Favorite currently playing song",
       "global": true
