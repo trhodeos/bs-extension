@@ -16,11 +16,12 @@ require(['underscore', 'tab_list', 'services'], function(_, TabList, Services) {
     
     var activeTab = tabList.getActiveTab();
     if (activeTab) {
-    	var activeTabHandler = Services.handlerRegistry.getFor(activeTab);
-    	// jf todo: can't we just use the command to pull from the prototype?
-    	if (command === "toggle") {
-    		activeTabHandler.toggle(activeTab);
-    	}
+      var activeTabHandler = Services.handlerRegistry.getFor(activeTab);
+      var fn = activeTabHandler.constructor.prototype[command];
+      console.log(fn);
+      if (fn) {
+        fn.call(activeTabHandler, activeTab);
+      }
     }
   });
 });

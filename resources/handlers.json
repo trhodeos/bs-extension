@@ -1,9 +1,9 @@
 [
   { 
-    "toggle": "(function(){console.log(window); return window.Grooveshark.togglePlayPause()})()",
-    "pause": "(function(){return window.Grooveshark.pause()})()",
-    "next": "(function(){return window.Grooveshark.next()})()",
-    "previous": "(function(){return window.Grooveshark.previous()})()",
+    "toggle": "(function(){return document.getElementById('play-pause').click()})()",
+    "pause": "(function(){var a=document.getElementById('play-pause'); if(a.classList.contains('playing')) a.click();})()",
+    "next": "(function(){return document.getElementById('play-next').click()})()",
+    "previous": "(function(){return document.getElementById('play-prev').click()})()",
     "favorite": "(function(){return window.Grooveshark.favoriteCurrentSong()})()",
     "i18nKey": "grooveshark",
     "urlToMatch": "grooveshark.com"
