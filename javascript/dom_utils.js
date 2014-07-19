@@ -9,5 +9,10 @@ define([], function() {
       // DANGER DANGER... oh well
       el.innerHTML += html;
     },
+    listItem: function(value) {
+      var el = document.createElement('li');
+      el.innerText = value;
+      return el;
+    }
   };
 });

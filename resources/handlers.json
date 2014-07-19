@@ -1,6 +1,6 @@
 [
   { 
-    "toggle": "(function(){return window.Grooveshark.togglePlayPause()})()",
+    "toggle": "(function(){console.log(window); return window.Grooveshark.togglePlayPause()})()",
     "pause": "(function(){return window.Grooveshark.pause()})()",
     "next": "(function(){return window.Grooveshark.next()})()",
     "previous": "(function(){return window.Grooveshark.previous()})()",

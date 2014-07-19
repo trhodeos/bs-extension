@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   </head>
   <body>
-    <div id="main"></div>
+    <div id="main">
+      <ul id="tab_list"></ul>
+    </div>
 
     <script type="type/template" id="tab_list_element_template">
-      <div class="tab_list_element">
-        <h3><%= title %></h3>
-        <p><%= url %></p>
-      </div>
+      <li class="tab_list_element">
+        <%= title %>
+      </li>
     </script>
     <script data-main="javascript/main.js" src="bower_components/requirejs/require.js"></script>
   </body>

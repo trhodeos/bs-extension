@@ -1,0 +1,31 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+#main {
+  min-width: 200px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 90%;
+  color: #333;
+}
+
+#main ul {
+  margin: 0;
+  padding: 0;
+}
+
+#main li {
+  margin: 0 0 5px 0;
+  padding: 5px;
+  list-style: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 250px;
+  
+  border: 1px solid #ccc;
+}
+
+#main li:hover {
+  background-color: #f1f1f1;
+}

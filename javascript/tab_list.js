@@ -30,14 +30,25 @@ define(['underscore', 'services', 'dom_utils'],
     var that = this;
     that.refresh_(function(tabs) {
       DomUtils.clear(that.el_);
-      _.each(tabs, function(tab) {
-        DomUtils.append(that.el_, that.template_({
-          title: tab.title,
-          url: tab.url
-        }));
+      _.each(tabs, function(tab, index) {
+        var item = DomUtils.listItem(tab.title);
+        item.addEventListener('click', function() {
+          that.activateTab(index);
+        }, false);
+        that.el_.appendChild(item);
       });
     });
   };
+
+  TabList.prototype.activateTab = function(index) {
+    console.log('Setting active tab index to: ' + index);
+    var that = this;
+    that.activeTab_ = that.applicableTabs_[index];
+  };
+
+  TabList.prototype.getActiveTab = function() {
+    return this.activeTab_;
+  }
 
   return TabList;
 });
