@@ -41,8 +41,12 @@ define(['underscore', 'services', 'dom_utils'],
   };
 
   TabList.prototype.activateTab = function(index) {
-    console.log('Sending active tab to event page');
-    chrome.runtime.sendMessage({activeTab: this.applicableTabs_[index].id});
+    var activeTabId = this.applicableTabs_[index].id;
+    if (activeTabId) {
+      chrome.storage.local.set({activeTabId: activeTabId}, function() {
+        console.log('Set active tab to:', activeTabId);
+      });
+    }
   };
 
   return TabList;
