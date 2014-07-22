@@ -43,8 +43,21 @@ define(['underscore', 'services', 'dom_utils'],
   TabList.prototype.activateTab = function(index) {
     var activeTabId = this.applicableTabs_[index].id;
     if (activeTabId) {
-      chrome.storage.local.set({activeTabId: activeTabId}, function() {
-        console.log('Set active tab to:', activeTabId);
+      chrome.storage.local.get('activeTabId', function(items) {
+        if (items.activeTabId) {
+          // an active tab already exists. so pause it.
+          chrome.tabs.get(items.activeTabId, function(tab) {
+            if (tab) {
+              console.log('Pausing old tab.');
+              var activeTabHandler = Services.handlerRegistry.getFor(tab);
+              activeTabHandler.pause(tab);
+            }  
+          });
+        }
+
+        chrome.storage.local.set({activeTabId: activeTabId}, function() {
+          console.log('Set active tab to:', activeTabId);
+        });
       });
     }
   };

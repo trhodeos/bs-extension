@@ -19,8 +19,6 @@ require(['services'], function(Services) {
             }
           }  
         });
-      } else {
-        console.log('Active tab id does not exist.');
       }
     });
   });
