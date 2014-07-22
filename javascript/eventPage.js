@@ -17,7 +17,7 @@ require(['services'], function(Services) {
               console.log('Invoking tab handler function:', command);
               fn.call(activeTabHandler, tab);
             }
-          }  
+          }
         });
       }
     });

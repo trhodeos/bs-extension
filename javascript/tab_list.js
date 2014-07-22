@@ -1,4 +1,4 @@
-define(['underscore', 'services', 'dom_utils'], 
+define(['underscore', 'services', 'dom_utils'],
     function(_, Services, DomUtils) {
   var TabList = function(el, opt_template_id) {
     this.el_ = el;
@@ -14,7 +14,7 @@ define(['underscore', 'services', 'dom_utils'],
     chrome.windows.getAll({populate: true}, function(windows) {
       _.each(windows, function(w) {
         var tabs = _.filter(w.tabs, function(tab) {
-          return Services.handlerRegistry.getFor(tab) != null;  
+          return Services.handlerRegistry.getFor(tab) != null;
         });
         that.applicableTabs_.push.apply(that.applicableTabs_, tabs);
       });
@@ -44,14 +44,14 @@ define(['underscore', 'services', 'dom_utils'],
     var activeTabId = this.applicableTabs_[index].id;
     if (activeTabId) {
       chrome.storage.local.get('activeTabId', function(items) {
-        if (items.activeTabId) {
+        if (items.activeTabId && items.activeTabId !== activeTabId) {
           // an active tab already exists. so pause it.
           chrome.tabs.get(items.activeTabId, function(tab) {
             if (tab) {
               console.log('Pausing old tab.');
               var activeTabHandler = Services.handlerRegistry.getFor(tab);
               activeTabHandler.pause(tab);
-            }  
+            }
           });
         }
 
