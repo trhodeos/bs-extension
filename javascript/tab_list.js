@@ -41,7 +41,8 @@ define(['underscore', 'services', 'dom_utils'],
   };
 
   TabList.prototype.activateTab = function(index) {
-    var activeTabId = this.applicableTabs_[index].id;
+    var activeTab = this.applicableTabs_[index];
+    var activeTabId = activeTab.id;
     if (activeTabId) {
       chrome.storage.local.get('activeTabId', function(items) {
         if (items.activeTabId && items.activeTabId !== activeTabId) {
@@ -55,8 +56,10 @@ define(['underscore', 'services', 'dom_utils'],
           });
         }
 
-        chrome.storage.local.set({activeTabId: activeTabId}, function() {
+        var json = Services.handlerRegistry.getFor(activeTab).json_;
+        chrome.storage.local.set({activeTabId: activeTabId, handler: JSON.stringify(json)}, function() {
           console.log('Set active tab to:', activeTabId);
+          console.log('Set handler to:', json);
         });
       });
     }
