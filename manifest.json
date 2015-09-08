@@ -9,6 +9,12 @@
     "default_popup": "index.html"
   },
 
+  "icons": {
+    "16": "resources/beard.png",
+    "48": "resources/beard.png",
+    "128": "resources/beard.png"
+  },
+
   "commands": {
     "toggle": {
       "suggested_key": {
