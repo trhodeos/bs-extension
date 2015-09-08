@@ -22,6 +22,8 @@ define(['underscore', 'services', 'dom_utils'],
         console.log('calling cb with ');
         console.log(that.applicableTabs_);
         cb(that.applicableTabs_);
+      } else {
+        that.el_.textContent = "No applicable tabs open :'(";
       }
     });
   };
@@ -31,11 +33,21 @@ define(['underscore', 'services', 'dom_utils'],
     that.refresh_(function(tabs) {
       DomUtils.clear(that.el_);
       _.each(tabs, function(tab, index) {
-        var item = DomUtils.listItem(tab.title);
+        var item = DomUtils.listItem(tab.id, tab.title);
         item.addEventListener('click', function() {
           that.activateTab(index);
+          item.classList.add('selected');
         }, false);
         that.el_.appendChild(item);
+      });
+      chrome.storage.local.get('activeTabId', function(item) {
+        if (!item || !item.activeTabId) {
+          return;
+        }
+        var listItem = document.getElementById(item.activeTabId);
+        if (listItem) {
+          listItem.classList.add('selected');
+        }
       });
     });
   };

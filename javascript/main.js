@@ -4,8 +4,7 @@ require.config({
     'underscore': '../bower_components/underscore/underscore'
   }
 });
-var bs = {};
-require(['underscore', 'tab_list', 'services'], function(_, TabList, Services) {
+require(['tab_list'], function(TabList) {
   var tabList = new TabList(document.getElementById('tab_list'));
   tabList.render();
 });
